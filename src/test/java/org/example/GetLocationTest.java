@@ -1,7 +1,9 @@
 package org.example;
 
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.example.location.Location;
 
@@ -9,9 +11,17 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
+@Epic("Тестирование API https://developer.accuweather.com/apis ")
+@Feature("Домашняя работа 6")
 public class GetLocationTest extends AccuweatherAbstractTest{
 
     @Test
+    @DisplayName("Местоположение")
+    @Description("Возвращает основную информацию о местоположениях")
+    @Link("https://developer.accuweather.com/accuweather-locations-api/apis")
+    @Severity(SeverityLevel.BLOCKER)
+    @Owner("avk1702")
+    @Story("Тестирование метода GetLocation")
     void getLocation_search_returnTyumen() {
 
         List<Location> response = given()
