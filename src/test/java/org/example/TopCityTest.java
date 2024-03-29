@@ -30,7 +30,7 @@ public class TopCityTest extends AccuweatherAbstractTest{
                 .when()
                 .get(getBaseUrl() + "/currentconditions/v1/topcities/50")
                 .then()
-                .statusCode(401)
+                .statusCode(200)
                 .time(Matchers.lessThan(2000l));
 
     }
